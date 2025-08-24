@@ -1,0 +1,28 @@
+{
+  "arrowParens": "avoid",
+  "singleQuote": true,
+  "printWidth": 100,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "plugins": ["@trivago/prettier-plugin-sort-imports"],
+  "importOrder": [
+    "server-only",
+    "<THIRD_PARTY_MODULES>",
+    "@/shared/assets",
+    "@/",
+    "^../(.*?)(?<!module\\.scss)$",
+    "^./(.*?)(?<!module\\.scss)$",
+    "^../(.*?)\\.module\\.scss$",
+    "^./(.*?)\\.module\\.scss$"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "overrides": [
+    {
+      "files": "*.svg",
+      "options": {
+        "parser": "html"
+      }
+    }
+  ]
+}
