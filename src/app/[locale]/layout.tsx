@@ -4,7 +4,8 @@ import { notFound } from 'next/navigation';
 import { type ReactNode } from 'react';
 
 import { roboto } from '@/fonts';
-import { routing } from '@/shared';
+import { routing } from '@/i18n/routing';
+import { MobxProvider } from '@/providers/MobxProvider';
 import '@/styles/main.scss';
 
 export const metadata: Metadata = {
@@ -37,7 +38,9 @@ export default async function LocaleLayout(props: Props) {
   return (
     <html lang={locale}>
       <body className={roboto.variable}>
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider>
+          <MobxProvider>{children}</MobxProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

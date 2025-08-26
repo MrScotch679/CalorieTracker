@@ -19,7 +19,7 @@ export default getRequestConfig(async params => {
 
   await Promise.all(
     namespaces.map(async ns => {
-      const nsMessages = (await import(`../../../../messages/${locale}/${ns}.json`)).default;
+      const nsMessages = (await import(`../../messages/${locale}/${ns}.json`)).default;
       Object.assign(messages, nsMessages);
     })
   );
