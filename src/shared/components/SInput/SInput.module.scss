@@ -1,0 +1,86 @@
+@mixin box-shadow($shadow) {
+  box-shadow: 0 0 0 2px color-mix(in srgb, $shadow 20%, transparent);
+}
+
+.root {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.label {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.control {
+  position: relative;
+
+  display: grid;
+  align-items: center;
+
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-8);
+
+  background-color: var(--surface-elevated);
+
+  transition:
+    border-color var(--duration-normal),
+    box-shadow var(--duration-normal),
+    background-color var(--duration-normal);
+
+  &.is-disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  &.is-error {
+    border-color: var(--error);
+
+    @include box-shadow(var(--error));
+  }
+
+  &:focus-within {
+    border-color: var(--accent);
+
+    @include box-shadow(var(--accent));
+  }
+}
+
+.input {
+  width: 100%;
+  padding: var(--space-8) var(--space-16);
+  border: none;
+
+  font-size: var(--font-size-md);
+  color: var(--text-primary);
+
+  background: transparent;
+  outline: none;
+}
+
+/* Sizes */
+.size-sm {
+  min-height: 2rem; /* 32px */
+}
+
+.size-md {
+  min-height: 2.5rem; /* 40px */
+}
+
+.size-lg {
+  min-height: 3rem; /* 48px */
+}
+
+.description {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.error {
+  font-size: var(--font-size-sm);
+  color: var(--error);
+}
+
+.full-width {
+  width: 100%;
+}

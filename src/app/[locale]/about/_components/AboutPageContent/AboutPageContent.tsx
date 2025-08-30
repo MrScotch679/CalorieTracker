@@ -1,6 +1,6 @@
 'use client';
 
-import { SButton } from '@/shared';
+import { SButton, SInput } from '@/shared';
 
 const variants = ['primary', 'secondary', 'outline', 'ghost', 'destructive', 'link'] as const;
 const sizes = ['sm', 'md', 'lg', 'icon'] as const;
@@ -37,6 +37,47 @@ export const AboutPageContent = () => {
               </SButton>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section>
+        <h3 style={{ marginBottom: 'var(--space-16)' }}>{'Inputs – states'}</h3>
+        <div style={{ display: 'grid', gap: 'var(--space-12)' }}>
+          <SInput label={'Default'} placeholder={'Enter text'} />
+          <SInput
+            label={'With description'}
+            description={'Helpful hint about this field'}
+            placeholder={'Enter value'}
+          />
+          <SInput
+            label={'With error'}
+            error={'This field is required'}
+            placeholder={'Enter value'}
+          />
+          <SInput label={'Disabled'} disabled placeholder={'Not editable'} />
+          <SInput label={'Number'} type={'number'} placeholder={'0'} />
+        </div>
+      </section>
+
+      <section>
+        <h3 style={{ marginBottom: 'var(--space-16)' }}>{'Inputs – sizes'}</h3>
+        <div
+          style={{
+            display: 'grid',
+            gap: 'var(--space-12)',
+            gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+          }}
+        >
+          <SInput label={'Small'} size={'sm'} placeholder={'Small size'} />
+          <SInput label={'Medium'} size={'md'} placeholder={'Medium size'} />
+          <SInput label={'Large'} size={'lg'} placeholder={'Large size'} />
+        </div>
+      </section>
+
+      <section>
+        <h3 style={{ marginBottom: 'var(--space-16)' }}>{'Input – full width'}</h3>
+        <div style={{ maxWidth: 420 }}>
+          <SInput fullWidth label={'Full width'} placeholder={'Stretches to container width'} />
         </div>
       </section>
 
