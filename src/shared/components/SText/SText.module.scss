@@ -1,0 +1,172 @@
+.root {
+  color: var(--text-primary);
+}
+
+/* Variants – sizes/line-height based on tokens */
+.variant-display {
+  font-size: var(--font-size-4xl);
+  line-height: var(--line-height-tight);
+}
+
+.variant-h1 {
+  font-size: var(--font-size-3xl);
+  line-height: var(--line-height-tight);
+}
+
+.variant-h2 {
+  font-size: var(--font-size-2xl);
+  line-height: var(--line-height-tight);
+}
+
+.variant-h3 {
+  font-size: var(--font-size-xl);
+}
+
+.variant-h4 {
+  font-size: var(--font-size-lg);
+}
+
+.variant-h5 {
+  font-size: var(--font-size-md);
+}
+
+.variant-h6 {
+  font-size: var(--font-size-sm);
+}
+
+.variant-subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+}
+
+.variant-body {
+  font-size: var(--font-size-md);
+}
+
+.variant-caption {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.variant-overline {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Weights */
+.weight-regular {
+  font-weight: var(--font-weight-regular);
+}
+
+.weight-medium {
+  font-weight: var(--font-weight-medium);
+}
+
+.weight-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.weight-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+/* Tones */
+.tone-primary {
+  color: var(--text-primary);
+}
+
+.tone-secondary {
+  color: var(--text-secondary);
+}
+
+.tone-muted {
+  color: var(--gray-500);
+}
+
+.tone-success {
+  color: var(--success);
+}
+
+.tone-warning {
+  color: var(--warning);
+}
+
+.tone-error {
+  color: var(--error);
+}
+
+.tone-accent {
+  color: var(--accent);
+}
+
+.tone-link {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* Alignment */
+.align-left {
+  text-align: left;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-justify {
+  text-align: justify;
+}
+
+/* Transform */
+.transform-none {
+  text-transform: none;
+}
+
+.transform-uppercase {
+  text-transform: uppercase;
+}
+
+.transform-lowercase {
+  text-transform: lowercase;
+}
+
+.transform-capitalize {
+  text-transform: capitalize;
+}
+
+/* Decorations */
+.italic {
+  font-style: italic;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+}
+
+/* Layout helpers */
+.no-wrap {
+  white-space: nowrap;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.clamp {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--clamp-lines, 2);
+}

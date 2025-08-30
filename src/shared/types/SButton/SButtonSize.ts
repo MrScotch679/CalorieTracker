@@ -1,1 +1,1 @@
-export type SButtonSize = 'sm' | 'md' | 'lg' | 'icon';
+export type SButtonSize = 'sm' | 'md' | 'icon';

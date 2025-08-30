@@ -2,8 +2,8 @@
 
 import { SButton, SInput } from '@/shared';
 
-const variants = ['primary', 'secondary', 'outline', 'ghost', 'destructive', 'link'] as const;
-const sizes = ['sm', 'md', 'lg', 'icon'] as const;
+const variants = ['primary', 'secondary', 'outline', 'ghost', 'destructive'] as const;
+const sizes = ['sm', 'md', 'icon'] as const;
 
 export const AboutPageContent = () => {
   return (

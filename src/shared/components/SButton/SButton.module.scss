@@ -59,9 +59,7 @@
     @include button-size(2.5rem, var(--space-20), var(--radius-8)); /* 40px */
   }
 
-  &.size-lg {
-    @include button-size(3rem, var(--space-24), var(--radius-12)); /* 48px */
-  }
+  /* removed size-lg */
 
   &.size-icon {
     width: 2.5rem;
@@ -97,12 +95,7 @@
     @include variant(var(--error), var(--accent-contrast));
   }
 
-  &.variant-link {
-    @include variant(transparent, var(--accent), transparent);
-
-    height: auto;
-    padding: 0;
-  }
+  /* removed link variant */
 
   /* Loading state */
   &.is-loading {
