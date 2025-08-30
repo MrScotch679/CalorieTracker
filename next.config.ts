@@ -18,42 +18,12 @@ const nextConfig: NextConfig = {
     // https://nextjs.org/docs/pages/api-reference/components/image#devicesizes
     deviceSizes: [360, 430, 576, 768, 992, 1440, 1920],
     // https://nextjs.org/docs/messages/next-image-unconfigured-host
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'storage.swapspace.co',
-        port: '',
-        pathname: '/static/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 's2.coinmarketcap.com',
-        port: '',
-        pathname: '/static/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'dev-storage.swapspace.co',
-        port: '',
-        pathname: '/static/**',
-      },
-    ],
+    remotePatterns: [],
   },
   // https://sass-lang.com/d/legacy-js-api
   // https://github.com/vercel/next.js/issues/71638#issuecomment-2431137842
-  sassOptions: {
-    silenceDeprecations: ['legacy-js-api'],
-  },
-  experimental: {
-    turbo: {
-      rules: {
-        '*.svg': {
-          loaders: ['@svgr/webpack'],
-          as: '*.js',
-        },
-      },
-    },
-  },
+  sassOptions: { silenceDeprecations: ['legacy-js-api'] },
+  experimental: { turbo: { rules: { '*.svg': { loaders: ['@svgr/webpack'], as: '*.js' } } } },
 };
 
 const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
