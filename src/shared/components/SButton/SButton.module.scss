@@ -1,0 +1,131 @@
+@mixin button-size($height, $x-padding, $radius) {
+  height: $height;
+  padding: 0 $x-padding;
+  border-radius: $radius;
+}
+
+@mixin variant($bg, $color, $border: transparent) {
+  border-color: $border;
+  color: $color;
+  background-color: $bg;
+}
+
+.root {
+  cursor: pointer;
+  user-select: none;
+
+  display: inline-flex;
+  gap: var(--space-8);
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid transparent;
+  border-radius: var(--radius-8);
+
+  background-color: var(--accent);
+
+  transition:
+    background-color var(--duration-fast),
+    color var(--duration-fast),
+    box-shadow var(--duration-fast),
+    filter var(--duration-fast),
+    transform var(--duration-fast);
+
+  -webkit-tap-highlight-color: transparent;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  &:hover:not(:disabled) {
+    filter: brightness(0.96);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(1px);
+  }
+
+  &.full-width {
+    width: 100%;
+  }
+
+  /* Sizes */
+  &.size-sm {
+    @include button-size(2rem, var(--space-16), var(--radius-8)); /* 32px */
+  }
+
+  &.size-md {
+    @include button-size(2.5rem, var(--space-20), var(--radius-8)); /* 40px */
+  }
+
+  &.size-lg {
+    @include button-size(3rem, var(--space-24), var(--radius-12)); /* 48px */
+  }
+
+  &.size-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+  }
+
+  .icon {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Variants */
+  &.variant-primary {
+    @include variant(var(--accent), var(--accent-contrast));
+
+    box-shadow: var(--shadow-sm);
+  }
+
+  &.variant-secondary {
+    @include variant(var(--background-secondary), var(--text-primary), var(--border-primary));
+  }
+
+  &.variant-outline {
+    @include variant(transparent, var(--text-primary), var(--border-primary));
+  }
+
+  &.variant-ghost {
+    @include variant(transparent, var(--text-primary));
+  }
+
+  &.variant-destructive {
+    @include variant(var(--error), var(--accent-contrast));
+  }
+
+  &.variant-link {
+    @include variant(transparent, var(--accent), transparent);
+
+    height: auto;
+    padding: 0;
+  }
+
+  /* Loading state */
+  &.is-loading {
+    pointer-events: none;
+  }
+
+  .spinner {
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid var(--border-primary);
+    border-top-color: currentcolor;
+    border-radius: 50%;
+
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

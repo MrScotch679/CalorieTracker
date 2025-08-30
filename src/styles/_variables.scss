@@ -2,8 +2,129 @@
 
 /* stylelint-disable value-keyword-case */
 
+/*
+  Design tokens
+  - Base palette tokens (color-agnostic, non-semantic)
+  - Semantic tokens (mapped per theme: light/dark)
+  - Typography, spacing, radius, shadow, z-index, motion
+*/
+
 :root {
+  /* Typography */
   --system-font-family:
     'Roboto', 'Quicksand', 'Source Sans Pro', -apple-system, 'BlinkMacSystemFont', 'Segoe UI',
     'Helvetica Neue', Arial, sans-serif;
+  --font-family-sans: var(--system-font-family);
+  --font-family-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+    monospace;
+
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-md: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-size-2xl: 1.5rem; /* 24px */
+  --font-size-3xl: 1.875rem; /* 30px */
+  --font-size-4xl: 2.25rem; /* 36px */
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-loose: 1.7;
+
+  /* Spacing scale */
+
+  --space-2: 0.125rem; /* 2px */
+  --space-4: 0.25rem; /* 4px */
+  --space-8: 0.5rem; /* 8px */
+  --space-12: 0.75rem; /* 12px */
+  --space-16: 1rem; /* 16px */
+  --space-20: 1.25rem; /* 20px */
+  --space-24: 1.5rem; /* 24px */
+  --space-32: 2rem; /* 32px */
+  --space-40: 2.5rem; /* 40px */
+  --space-48: 3rem; /* 48px */
+  --space-64: 4rem; /* 64px */
+
+  /* Radius */
+  --radius-4: 0.25rem; /* 4px */
+  --radius-8: 0.5rem; /* 8px */
+  --radius-12: 0.75rem; /* 12px */
+  --radius-16: 1rem; /* 16px */
+  --radius-pill: 999px;
+  --radius-round: 50%;
+
+  /* Shadow */
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 8%);
+  --shadow-md: 0 4px 12px rgb(0 0 0 / 12%);
+  --shadow-lg: 0 10px 24px rgb(0 0 0 / 16%);
+
+  /* Z-index */
+  --z-base: 0;
+  --z-dropdown: 1000;
+  --z-sticky: 1100;
+  --z-overlay: 1200;
+  --z-modal: 1300;
+  --z-popover: 1400;
+  --z-toast: 1500;
+  --z-tooltip: 1600;
+
+  /* Motion */
+  --duration-fast: 200ms;
+  --duration-normal: 300ms;
+  --duration-slow: 400ms;
+
+  /* Base palette (neutral and brand) */
+  --color-white: #fff;
+  --color-black: #000;
+
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+
+  /* CalorieTracker brand – fresh green */
+  --brand-50: #f0fdf4;
+  --brand-100: #dcfce7;
+  --brand-200: #bbf7d0;
+  --brand-300: #86efac;
+  --brand-400: #4ade80;
+  --brand-500: #22c55e;
+  --brand-600: #16a34a;
+  --brand-700: #15803d;
+  --brand-800: #166534;
+  --brand-900: #14532d;
+
+  --success-600: #16a34a;
+  --warning-600: #d97706;
+  --error-600: #dc2626;
+
+  /* Semantic tokens – light theme defaults */
+  --background-primary: var(--gray-50);
+  --background-secondary: var(--gray-100);
+  --surface-elevated: var(--color-white);
+  --overlay: rgb(0 0 0 / 50%);
+
+  --text-primary: var(--gray-900);
+  --text-secondary: var(--gray-600);
+
+  --border-primary: var(--gray-200);
+
+  --accent: var(--brand-500);
+  --accent-contrast: var(--color-white);
+
+  --success: var(--success-600);
+  --warning: var(--warning-600);
+  --error: var(--error-600);
 }
