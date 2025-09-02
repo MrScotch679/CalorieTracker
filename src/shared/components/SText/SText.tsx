@@ -19,7 +19,7 @@ export type STextVariant =
 
 export type STextWeight = 'regular' | 'medium' | 'semibold' | 'bold';
 
-export type STextTone =
+export type STextColor =
   | 'primary'
   | 'secondary'
   | 'muted'
@@ -36,7 +36,7 @@ export interface STextProps extends HTMLAttributes<HTMLElement> {
   asChild?: boolean;
   variant?: STextVariant;
   weight?: STextWeight;
-  tone?: STextTone;
+  color?: STextColor;
   align?: Align;
   transform?: Transform;
   italic?: boolean;
@@ -68,7 +68,7 @@ export const SText = (props: STextProps) => {
     asChild,
     variant = 'body',
     weight = 'regular',
-    tone = 'primary',
+    color = 'primary',
     align,
     transform,
     italic,
@@ -89,7 +89,7 @@ export const SText = (props: STextProps) => {
     styles.root,
     styles[`variant-${variant}`],
     styles[`weight-${weight}`],
-    styles[`tone-${tone}`],
+    styles[`color-${color}`],
     align && styles[`align-${align}`],
     transform && styles[`transform-${transform}`],
     {

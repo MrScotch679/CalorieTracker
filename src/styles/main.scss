@@ -22,7 +22,8 @@ body {
   background-color: var(--background-primary);
 }
 
-body {
+body,
+main {
   overflow: hidden auto;
   display: flex;
   flex-direction: column;

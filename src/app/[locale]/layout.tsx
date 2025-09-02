@@ -39,7 +39,9 @@ export default async function LocaleLayout(props: Props) {
     <html lang={locale}>
       <body className={roboto.variable}>
         <NextIntlClientProvider>
-          <MobxProvider>{children}</MobxProvider>
+          <MobxProvider>
+            <main>{children}</main>
+          </MobxProvider>
         </NextIntlClientProvider>
       </body>
     </html>

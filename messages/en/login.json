@@ -1,0 +1,19 @@
+{
+  "login": {
+    "title": "Calorie Tracker",
+    "subtitle": "Track your calories and macros",
+    "form": {
+      "title": "Welcome back",
+      "email": {
+        "label": "Email",
+        "placeholder": "Enter your email"
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "Enter your password"
+      },
+      "button": "Login",
+      "dontHaveAccount": "Don't have an account? <a>Sign up</a>"
+    }
+  }
+}

@@ -73,35 +73,35 @@
 }
 
 /* Tones */
-.tone-primary {
+.color-primary {
   color: var(--text-primary);
 }
 
-.tone-secondary {
+.color-secondary {
   color: var(--text-secondary);
 }
 
-.tone-muted {
+.color-muted {
   color: var(--gray-500);
 }
 
-.tone-success {
+.color-success {
   color: var(--success);
 }
 
-.tone-warning {
+.color-warning {
   color: var(--warning);
 }
 
-.tone-error {
+.color-error {
   color: var(--error);
 }
 
-.tone-accent {
+.color-accent {
   color: var(--accent);
 }
 
-.tone-link {
+.color-link {
   color: var(--accent);
   text-decoration: underline;
 }

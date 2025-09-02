@@ -95,8 +95,6 @@
     @include variant(var(--error), var(--accent-contrast));
   }
 
-  /* removed link variant */
-
   /* Loading state */
   &.is-loading {
     pointer-events: none;
