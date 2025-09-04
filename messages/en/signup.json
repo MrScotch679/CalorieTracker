@@ -1,0 +1,32 @@
+{
+  "signup": {
+    "title": "Calorie Tracker",
+    "subtitle": "Track your nutrition journey naturally",
+    "form": {
+      "title": "Join Calorie Tracker",
+      "name": {
+        "label": "Full Name",
+        "placeholder": "Enter your name"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "Enter your email"
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "Enter your password"
+      },
+      "button": "Sign Up",
+      "haveAccount": "Already have an account? <a>Login</a>",
+      "errors": {
+        "nameMin": " The name must be at least 2 characters long.",
+        "nameMax": "Name is too long",
+        "nameType": "The name must start with a letter and can only contain letters, spaces and hyphens.",
+        "nameSpaces": "The name cannot consist only of spaces.",
+        "invalidEmail": "Invalid email",
+        "passwordMin": "Password must be at least 8 characters",
+        "passwordMax": "Password must not exceed 12 characters"
+      }
+    }
+  }
+}
