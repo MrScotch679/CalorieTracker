@@ -13,7 +13,12 @@
         "placeholder": "Enter your password"
       },
       "button": "Login",
-      "dontHaveAccount": "Don't have an account? <a>Sign up</a>"
+      "dontHaveAccount": "Don't have an account? <a>Sign up</a>",
+      "errors": {
+        "invalidEmail": "Invalid email",
+        "passwordMin": "Password must be at least 8 characters",
+        "passwordMax": "Password must not exceed 12 characters"
+      }
     }
   }
 }
