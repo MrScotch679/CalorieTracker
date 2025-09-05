@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 import type { HTMLAttributes, ReactNode } from 'react';
 
-import type { Align, STextColor, STextWeight } from '../../SText/SText';
-import { SText } from '../../SText/SText';
+import type { Align, STextColor, STextWeight } from '../SText/SText';
+import { SText } from '../SText/SText';
 
 import styles from './SH2.module.scss';
 
