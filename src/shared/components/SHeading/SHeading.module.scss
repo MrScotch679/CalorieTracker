@@ -1,0 +1,51 @@
+@use '@/styles/mixins' as mixins;
+
+.h1 {
+  font-size: var(--font-size-4xl);
+  line-height: var(--line-height-tight);
+
+  @media screen and (max-width: mixins.$lg) {
+    font-size: var(--font-size-3xl);
+  }
+
+  @media screen and (max-width: mixins.$sm) {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+.h2 {
+  font-size: var(--font-size-3xl);
+  line-height: var(--line-height-tight);
+
+  @media screen and (max-width: mixins.$lg) {
+    font-size: var(--font-size-2xl);
+  }
+
+  @media screen and (max-width: mixins.$sm) {
+    font-size: var(--font-size-xl);
+  }
+}
+
+.h3 {
+  font-size: var(--font-size-2xl);
+
+  @media screen and (max-width: mixins.$lg) {
+    font-size: var(--font-size-xl);
+  }
+
+  @media screen and (max-width: mixins.$sm) {
+    font-size: var(--font-size-lg);
+  }
+}
+
+.h4 {
+  font-size: var(--font-size-xl);
+
+  @media screen and (max-width: mixins.$lg) {
+    font-size: var(--font-size-lg);
+  }
+
+  @media screen and (max-width: mixins.$sm) {
+    font-size: var(--font-size-md);
+  }
+}
