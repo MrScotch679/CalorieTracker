@@ -1,7 +1,7 @@
 import { baseApi } from '@/shared';
 
 import { AuthApiRoutes } from '../../AuthApiRoutes';
-import type { UserDto } from '../../dto/UserDto';
+import type { UserDto } from '../../dto/Login/UserDto';
 import type { LoginViaEmailDto } from '../../models/Login/LoginViaEmailDto';
 
 class LoginApi {
