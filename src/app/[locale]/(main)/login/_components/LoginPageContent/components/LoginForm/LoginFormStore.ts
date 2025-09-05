@@ -7,7 +7,26 @@ export class LoginFormStore {
     makeAutoObservable(this, undefined, { autoBind: true });
   }
 
-  async login(): Promise<void> {
+  async handleLogin(/* { email, password }: { email: string; password: string } */): Promise<void> {
     this.isLoading = true;
+
+    try {
+      await new Promise(resolve => setTimeout(resolve, 3000));
+      // await loginApi.loginViaEmail(this.toLoginViaEmailDto({ email, password }));
+    } catch (error) {
+      console.error(error);
+    } finally {
+      this.isLoading = false;
+    }
   }
+
+  /*  private toLoginViaEmailDto({
+    email,
+    password,
+  }: {
+    email: string;
+    password: string;
+  }): LoginViaEmailDto {
+    return new LoginViaEmailDto(email, password);
+  } */
 }
