@@ -1,21 +1,8 @@
 import { Slot } from '@radix-ui/react-slot';
 import clsx from 'clsx';
-import type { CSSProperties, ElementType, HTMLAttributes, ReactNode } from 'react';
+import type { CSSProperties, HTMLAttributes, ReactNode } from 'react';
 
 import styles from './SText.module.scss';
-
-export type STextVariant =
-  | 'display'
-  | 'h1'
-  | 'h2'
-  | 'h3'
-  | 'h4'
-  | 'h5'
-  | 'h6'
-  | 'subtitle'
-  | 'body'
-  | 'caption'
-  | 'overline';
 
 export type STextWeight = 'regular' | 'medium' | 'semibold' | 'bold';
 
@@ -29,12 +16,11 @@ export type STextColor =
   | 'accent'
   | 'link';
 
-type Align = 'left' | 'center' | 'right' | 'justify';
+export type Align = 'left' | 'center' | 'right' | 'justify';
 type Transform = 'none' | 'uppercase' | 'lowercase' | 'capitalize';
 
 export interface STextProps extends HTMLAttributes<HTMLElement> {
   asChild?: boolean;
-  variant?: STextVariant;
   weight?: STextWeight;
   color?: STextColor;
   align?: Align;
@@ -49,24 +35,9 @@ export interface STextProps extends HTMLAttributes<HTMLElement> {
   children: ReactNode;
 }
 
-const defaultElementByVariant: Record<STextVariant, ElementType> = {
-  display: 'h1',
-  h1: 'h1',
-  h2: 'h2',
-  h3: 'h3',
-  h4: 'h4',
-  h5: 'h5',
-  h6: 'h6',
-  subtitle: 'p',
-  body: 'p',
-  caption: 'span',
-  overline: 'span',
-};
-
 export const SText = (props: STextProps) => {
   const {
     asChild,
-    variant = 'body',
     weight = 'regular',
     color = 'primary',
     align,
@@ -83,11 +54,8 @@ export const SText = (props: STextProps) => {
     ...rest
   } = props;
 
-  const Component: ElementType = defaultElementByVariant[variant] ?? 'p';
-
   const classNames: string = clsx(
     styles.root,
-    styles[`variant-${variant}`],
     styles[`weight-${weight}`],
     styles[`color-${color}`],
     align && styles[`align-${align}`],
@@ -116,8 +84,8 @@ export const SText = (props: STextProps) => {
   }
 
   return (
-    <Component className={classNames} style={styleWithClamp} {...rest}>
+    <p className={classNames} style={styleWithClamp} {...rest}>
       {children}
-    </Component>
+    </p>
   );
 };

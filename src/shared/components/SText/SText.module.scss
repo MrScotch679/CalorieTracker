@@ -2,59 +2,6 @@
   color: var(--text-primary);
 }
 
-/* Variants – sizes/line-height based on tokens */
-.variant-display {
-  font-size: var(--font-size-4xl);
-  line-height: var(--line-height-tight);
-}
-
-.variant-h1 {
-  font-size: var(--font-size-3xl);
-  line-height: var(--line-height-tight);
-}
-
-.variant-h2 {
-  font-size: var(--font-size-2xl);
-  line-height: var(--line-height-tight);
-}
-
-.variant-h3 {
-  font-size: var(--font-size-xl);
-}
-
-.variant-h4 {
-  font-size: var(--font-size-lg);
-}
-
-.variant-h5 {
-  font-size: var(--font-size-md);
-}
-
-.variant-h6 {
-  font-size: var(--font-size-sm);
-}
-
-.variant-subtitle {
-  font-size: var(--font-size-lg);
-  color: var(--text-secondary);
-}
-
-.variant-body {
-  font-size: var(--font-size-md);
-}
-
-.variant-caption {
-  font-size: var(--font-size-sm);
-  color: var(--text-secondary);
-}
-
-.variant-overline {
-  font-size: var(--font-size-xs);
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
 /* Weights */
 .weight-regular {
   font-weight: var(--font-weight-regular);
@@ -169,4 +116,58 @@
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: var(--clamp-lines, 2);
+  line-clamp: var(--clamp-lines, 2);
+}
+
+/* Responsive typography for headings */
+@media screen and (width < 992px) {
+  .variant-h1 {
+    font-size: var(--font-size-3xl);
+  }
+
+  .variant-h2 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .variant-h3 {
+    font-size: var(--font-size-xl);
+  }
+
+  .variant-h4 {
+    font-size: var(--font-size-lg);
+  }
+
+  .variant-h5 {
+    font-size: var(--font-size-md);
+  }
+
+  .variant-h6 {
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media screen and (width < 576px) {
+  .variant-h1 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .variant-h2 {
+    font-size: var(--font-size-xl);
+  }
+
+  .variant-h3 {
+    font-size: var(--font-size-lg);
+  }
+
+  .variant-h4 {
+    font-size: var(--font-size-md);
+  }
+
+  .variant-h5 {
+    font-size: var(--font-size-sm);
+  }
+
+  .variant-h6 {
+    font-size: var(--font-size-xs);
+  }
 }

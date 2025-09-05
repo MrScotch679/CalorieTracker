@@ -2,7 +2,7 @@ import { getTranslations } from 'next-intl/server';
 
 import { Namespace } from '@/i18n/namespaces';
 import { Link } from '@/i18n/navigation';
-import { SText } from '@/shared';
+import { SH2, SText } from '@/shared';
 
 import { LoginForm } from './components/LoginForm/LoginForm';
 
@@ -13,9 +13,9 @@ export const LoginPageContent = async () => {
 
   return (
     <div className={styles.root}>
-      <SText variant="h2" align="center" weight="bold" color="secondary">
+      <SH2 align="center" color="secondary">
         {t('form.title')}
-      </SText>
+      </SH2>
 
       <LoginForm />
 

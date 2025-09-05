@@ -1,7 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 
 import { Namespace } from '@/i18n/namespaces';
-import { SText } from '@/shared';
+import { SH1, SH3 } from '@/shared';
 
 import styles from './LoginPageHeader.module.scss';
 
@@ -10,13 +10,13 @@ export const LoginPageHeader = async () => {
 
   return (
     <div className={styles.root}>
-      <SText variant="h1" align="center" color="secondary" weight="bold">
+      <SH1 align="center" color="secondary">
         {t('title')}
-      </SText>
+      </SH1>
 
-      <SText variant="h3" color="secondary" align="center">
+      <SH3 color="secondary" align="center">
         {t('subtitle')}
-      </SText>
+      </SH3>
     </div>
   );
 };

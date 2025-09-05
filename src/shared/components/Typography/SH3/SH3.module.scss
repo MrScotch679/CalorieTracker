@@ -1,0 +1,13 @@
+@use '@/styles/mixins' as mixins;
+
+.root {
+  font-size: var(--font-size-2xl);
+
+  @media screen and (max-width: mixins.$lg) {
+    font-size: var(--font-size-xl);
+  }
+
+  @media screen and (max-width: mixins.$sm) {
+    font-size: var(--font-size-lg);
+  }
+}
