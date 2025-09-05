@@ -3,22 +3,14 @@
 import { observer } from 'mobx-react-lite';
 import { useTranslations } from 'next-intl';
 import { useMemo } from 'react';
-import { useForm } from 'react-hook-form';
-import z from 'zod';
+import { z } from 'zod';
 
 import { Namespace } from '@/i18n/namespaces';
-import { SButton, SInput } from '@/shared';
+import { SButton, SInput, useZodForm } from '@/shared';
 
 import { LoginFormStore } from './LoginFormStore';
 
 import styles from './LoginForm.module.scss';
-
-export type INPUTS_SCHEMA = z.infer<typeof INPUTS_SCHEMA>;
-
-const INPUTS_SCHEMA = z.object({
-  email: z.email({ message: 'Invalid email' }),
-  password: z.string().min(8).max(12, { message: 'Password must be between 8 and 12 characters' }),
-});
 
 export const LoginForm = observer(() => {
   const t = useTranslations(Namespace.LOGIN);
@@ -27,11 +19,22 @@ export const LoginForm = observer(() => {
 
   const { isLoading, login } = store;
 
+  const schema = z.object({
+    email: z.email({ message: 'Invalid email' }),
+    password: z
+      .string()
+      .min(8, { message: 'Password must be at least 8 characters' })
+      .max(64, { message: 'Password must be at most 64 characters' }),
+  });
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<INPUTS_SCHEMA>();
+  } = useZodForm({
+    schema,
+    mode: 'onSubmit',
+  });
 
   return (
     <form autoComplete="on" className={styles.root} onSubmit={handleSubmit(login)}>
